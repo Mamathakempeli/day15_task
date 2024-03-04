@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator_output_files/bootstrap.min.css">
+    <link href="Calculator_output_files/css2.css" rel="stylesheet">
+</head>
+
+<body>
+    <script src="Calculator_output_files/script.js"></script><div class="container-fluid mt-5 ml-5 p-5"><div class="offset-md-2 offset-sm-1 row text-md-center text-sm-left h4 mb-0" style="font-family: 'Comfortaa', cursive;"><input class="col-8 border-3 border-light text-right mt-5 mb-1" type="text" disabled="disabled" style="line-height:60px; background-color:#DAE0E2; font-family: 'Comfortaa', cursive;" id="display"></div><div class="offset-md-2 offset-sm-1 row text-md-center text-sm-left h4 mb-0" style="font-family: 'Comfortaa', cursive;"><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="square" onclick="power2()">x<sup>2</sup></button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="root" onclick="sqrRoot()">√</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="c" onclick="clearScreen()">c</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="/" onclick="appendNumber('/')">÷</button></div><div class="offset-md-2 offset-sm-1 row text-md-center text-sm-left h4 mb-0" style="font-family: 'Comfortaa', cursive;"><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="7" onclick="appendNumber(7)">7</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="8" onclick="appendNumber(8)">8</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="9" onclick="appendNumber(9)">9</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="X" onclick="appendNumber('*')">x</button></div><div class="offset-md-2 offset-sm-1 row text-md-center text-sm-left h4 mb-0" style="font-family: 'Comfortaa', cursive;"><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="4" onclick="appendNumber(4)">4</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="5" onclick="appendNumber(5)">5</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="6" onclick="appendNumber(6)">6</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="-" onclick="appendNumber('-')">-</button></div><div class="offset-md-2 offset-sm-1 row text-md-center text-sm-left h4 mb-0" style="font-family: 'Comfortaa', cursive;"><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="1" onclick="appendNumber(1)">1</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="2" onclick="appendNumber(2)">2</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="3" onclick="appendNumber(3)">3</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="+" onclick="appendNumber('+')">+</button></div><div class="offset-md-2 offset-sm-1 row text-md-center text-sm-left h4 mb-0" style="font-family: 'Comfortaa', cursive;"><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="cube" onclick="power3()">x<sup>3</sup></button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" style="font-family: 'Comfortaa', cursive;" value="0" onclick="appendNumber(0)">0</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="." onclick="appendNumber('.')">.</button><button class="btn-fluid btn-dark text-md-center text-sm-left text-xs-left p-md-3 p-sm-4 p-xs-4 col-2" value="=" onclick="equate()">=</button></div></div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
